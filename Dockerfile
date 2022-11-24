@@ -19,7 +19,7 @@ RUN mkdir /var/cache/tesseract \
 ENV TIKA_VERSION 2.5.0
 ENV TIKA_URL https://archive.apache.org/dist/tika/$TIKA_VERSION/tika-server-standard-$TIKA_VERSION.jar
 
-RUN wget -P /usr/share/java $TIKA_URL \
+RUN wget --no-check-certificate -P /usr/share/java $TIKA_URL \
     && chmod 755 /usr/share/java/tika-server-standard-$TIKA_VERSION.jar \
     && rm -rf /tmp/* /var/tmp/*
 
